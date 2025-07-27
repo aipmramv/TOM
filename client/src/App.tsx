@@ -16,9 +16,9 @@ import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col scroll-smooth">
       <Navigation />
-      <main className="flex-1">
+      <main className="flex-1 gpu-optimized">
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/services" component={Services} />

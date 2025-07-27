@@ -215,25 +215,26 @@ export default function AITechIllustration() {
         {/* Binary Code Animation */}
         <motion.g
           initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 0.6, 0] }}
-          transition={{ duration: 3, repeat: Infinity, delay: 3 }}
+          animate={{ opacity: [0, 0.5, 0] }}
+          transition={{ duration: 4, repeat: Infinity, delay: 3, ease: [0.4, 0, 0.6, 1] }}
         >
-          {Array.from({ length: 20 }).map((_, i) => (
+          {Array.from({ length: 16 }).map((_, i) => (
             <motion.text
               key={i}
-              x={50 + (i % 10) * 40}
-              y={50 + Math.floor(i / 10) * 30}
-              className="text-xs font-mono"
-              fill="rgba(59, 130, 246, 0.4)"
+              x={50 + (i % 8) * 50}
+              y={50 + Math.floor(i / 8) * 40}
+              className="text-xs font-mono will-change-transform"
+              fill="rgba(59, 130, 246, 0.3)"
               animate={{ 
-                opacity: [0, 1, 0],
-                y: [50 + Math.floor(i / 10) * 30, 30 + Math.floor(i / 10) * 30]
+                opacity: [0, 0.8, 0],
+                y: [50 + Math.floor(i / 8) * 40, 30 + Math.floor(i / 8) * 40]
               }}
               transition={{ 
-                duration: 2, 
+                duration: 2.5, 
                 repeat: Infinity, 
-                delay: i * 0.1,
-                ease: "easeInOut"
+                delay: i * 0.12,
+                ease: [0.4, 0, 0.6, 1],
+                repeatType: "reverse"
               }}
             >
               {Math.random() > 0.5 ? '1' : '0'}

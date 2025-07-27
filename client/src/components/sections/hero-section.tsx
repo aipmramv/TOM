@@ -108,18 +108,18 @@ export default function HeroSection() {
             {/* Stats Section */}
             <motion.div
               className="grid grid-cols-3 gap-8 pt-12 border-t border-white/20"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              transition={{ duration: 0.6, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}
             >
               {statsData.map((stat, index) => (
                 <motion.div
                   key={stat.label}
-                  className="text-center group"
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  className="text-center group will-change-transform"
+                  initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4, delay: 0.8 + index * 0.08, ease: [0.4, 0, 0.2, 1] }}
+                  whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
                 >
                   <stat.icon className="w-8 h-8 text-amber-400 mx-auto mb-2 group-hover:text-pink-400 transition-colors" />
                   <div className="text-2xl lg:text-3xl font-bold text-white mb-1">
@@ -133,10 +133,10 @@ export default function HeroSection() {
           
           {/* Enhanced Illustration */}
           <motion.div
-            className="relative lg:h-[600px] flex items-center justify-center"
-            initial={{ opacity: 0, x: 50 }}
+            className="relative lg:h-[600px] flex items-center justify-center gpu-optimized"
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
           >
             {/* Enhanced Glow Effect Behind Illustration */}
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse" />
@@ -147,20 +147,30 @@ export default function HeroSection() {
       </div>
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 will-change-transform"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1.2 }}
+        transition={{ duration: 0.6, delay: 1.0, ease: [0.4, 0, 0.2, 1] }}
       >
         <motion.div
-          className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center will-change-transform"
+          animate={{ y: [0, 8, 0] }}
+          transition={{ 
+            duration: 2.5, 
+            repeat: Infinity,
+            ease: [0.4, 0, 0.6, 1],
+            repeatType: "reverse"
+          }}
         >
           <motion.div
-            className="w-1 h-3 bg-white/70 rounded-full mt-2"
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            className="w-1 h-3 bg-white/70 rounded-full mt-2 will-change-transform"
+            animate={{ y: [0, 4, 0] }}
+            transition={{ 
+              duration: 2.5, 
+              repeat: Infinity,
+              ease: [0.4, 0, 0.6, 1],
+              repeatType: "reverse"
+            }}
           />
         </motion.div>
       </motion.div>
