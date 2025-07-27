@@ -35,11 +35,11 @@ export default function Navigation() {
                   className="h-16 w-auto"
                 />
                 <div className="font-bold text-xl">
-                  <span className="text-blue-600">T</span>
+                  <span className="text-purple-600">T</span>
                   <span className="text-slate-700">otal </span>
-                  <span className="text-orange-500">O</span>
+                  <span className="text-purple-600">O</span>
                   <span className="text-slate-700">utsource </span>
-                  <span className="text-blue-600">M</span>
+                  <span className="text-purple-600">M</span>
                   <span className="text-slate-700">anagement</span>
                 </div>
               </motion.div>
