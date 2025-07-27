@@ -36,22 +36,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Logo with Glow Effect */}
-            <motion.div
-              className="mb-8"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-            >
-              <div className="relative inline-block">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg blur-lg opacity-75 animate-pulse" />
-                <img 
-                  src={logoPath} 
-                  alt="TotalOM Logo" 
-                  className="relative h-16 w-auto"
-                />
-              </div>
-            </motion.div>
+            
 
             <motion.h1
               className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight"
