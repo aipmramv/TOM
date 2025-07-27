@@ -32,7 +32,7 @@ export default function Navigation() {
                 <img 
                   src={logoPath} 
                   alt="TotalOM Logo" 
-                  className="h-10 w-auto"
+                  className="h-16 w-auto"
                 />
               </motion.div>
             </Link>
