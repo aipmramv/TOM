@@ -7,8 +7,7 @@ import {
   Factory, 
   Building2,
   Truck,
-  Home,
-  Banknote
+  Home
 } from "lucide-react";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
@@ -114,23 +113,6 @@ const industries = [
     color: "from-indigo-500 to-indigo-600",
     bgColor: "bg-indigo-50",
     iconColor: "text-indigo-600",
-  },
-  {
-    icon: Banknote,
-    name: "Finance & Banking",
-    description: "Secure financial software and payment solutions",
-    solutions: [
-      "Banking Management Systems",
-      "Payment Gateway Integration",
-      "Loan Management Systems",
-      "Financial Analytics Platforms",
-      "Mobile Banking Apps",
-      "Compliance & Risk Management"
-    ],
-    caseStudy: "Built a digital banking platform serving 50,000+ customers with 99.9% uptime.",
-    color: "from-cyan-500 to-cyan-600",
-    bgColor: "bg-cyan-50",
-    iconColor: "text-cyan-600",
   },
   {
     icon: Truck,

@@ -3,8 +3,8 @@ import { Users, Clock, Shield } from "lucide-react";
 import TeamIllustration from "@/components/graphics/team-illustration";
 
 const stats = [
-  { number: "10+", label: "Years in Global Outsourcing" },
-  { number: "100+", label: "Clients Served" },
+  { number: "Experienced", label: "Teams in Global Outsourcing" },
+  { number: "20+", label: "Clients Served" },
 ];
 
 const features = [
@@ -24,9 +24,9 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-slate-800 mb-6">About TotalOM</h2>
+            <h2 className="text-4xl font-bold text-slate-800 mb-6">About Total Outsource Management</h2>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              TotalOM is a next-gen IT & BPO services company based in Tamil Nadu, India. 
+              Total Outsource Management is a next-gen IT & BPO services company based in Thanjavur, Tamil Nadu, India. 
               We combine deep technical expertise with strong industry knowledge to deliver 
               digital solutions that drive business growth, reduce cost, and enhance customer experience.
             </p>

@@ -4,9 +4,9 @@ import { fadeInUp, fadeInLeft, fadeInRight } from "@/lib/animations";
 import TeamIllustration from "@/components/graphics/team-illustration";
 
 const stats = [
-  { number: "10+", label: "Years Experience", icon: Clock },
-  { number: "100+", label: "Projects Completed", icon: Award },
-  { number: "50+", label: "Happy Clients", icon: Users },
+  { number: "Experienced", label: "Teams", icon: Clock },
+  { number: "50+", label: "Projects Completed", icon: Award },
+  { number: "20+", label: "Happy Clients", icon: Users },
   { number: "24/7", label: "Support Available", icon: Shield },
 ];
 
@@ -58,7 +58,7 @@ export default function About() {
             initial="initial"
             animate="animate"
           >
-            <h1 className="text-5xl font-bold mb-6">About TotalOM</h1>
+            <h1 className="text-5xl font-bold mb-6">About Total Outsource Management</h1>
             <p className="text-xl max-w-3xl mx-auto">
               Your trusted partner for digital transformation and business process excellence
             </p>
@@ -78,7 +78,7 @@ export default function About() {
             >
               <h2 className="text-4xl font-bold text-slate-800 mb-6">Who We Are</h2>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                TotalOM is a next-generation IT & BPO services company based in Tamil Nadu, India. 
+                Total Outsource Management is a next-generation IT & BPO services company based in Thanjavur, Tamil Nadu, India. 
                 Founded with a vision to bridge the gap between technology and business success, 
                 we specialize in delivering comprehensive digital solutions that drive growth and efficiency.
               </p>

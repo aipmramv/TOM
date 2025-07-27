@@ -7,9 +7,9 @@ import { ArrowRight, Sparkles, Zap, Rocket } from "lucide-react";
 import logoPath from "@assets/tom-high-resolution-logo-transparent_1753645116528.png";
 
 const statsData = [
-  { number: "500+", label: "Projects Delivered", icon: Rocket },
-  { number: "10+", label: "Years Experience", icon: Zap },
-  { number: "50+", label: "Happy Clients", icon: Sparkles },
+  { number: "50+", label: "Projects Delivered", icon: Rocket },
+  { number: "Experienced", label: "Teams", icon: Zap },
+  { number: "20+", label: "Happy Clients", icon: Sparkles },
 ];
 
 export default function HeroSection() {

@@ -93,9 +93,9 @@ const bpoProjects = [
 ];
 
 const portfolioStats = [
-  { number: "500+", label: "Projects Delivered", icon: Rocket },
+  { number: "50+", label: "Projects Delivered", icon: Rocket },
   { number: "98%", label: "Client Satisfaction", icon: Star },
-  { number: "50+", label: "Happy Clients", icon: Users },
+  { number: "20+", label: "Happy Clients", icon: Users },
   { number: "24/7", label: "Support Available", icon: Zap },
 ];
 
@@ -462,9 +462,9 @@ export default function Portfolio() {
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { number: "150+", label: "Projects Delivered" },
+              { number: "50+", label: "Projects Delivered" },
               { number: "98%", label: "Client Satisfaction" },
-              { number: "50+", label: "Active Clients" },
+              { number: "20+", label: "Active Clients" },
               { number: "24/7", label: "Support Availability" },
             ].map((stat, index) => (
               <motion.div

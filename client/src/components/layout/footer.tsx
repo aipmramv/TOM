@@ -29,7 +29,7 @@ export default function Footer() {
               className="text-2xl font-bold text-blue-400 mb-4"
               whileHover={{ scale: 1.05 }}
             >
-              TotalOM
+              Total Outsource Management
             </motion.div>
             <p className="text-slate-300 mb-4">
               Empowering Business through Digital Innovation
@@ -100,6 +100,10 @@ export default function Footer() {
                 </div>
               </div>
               <div>
+                <div className="font-medium text-white">Phone</div>
+                <div className="text-sm">+91 9884411456</div>
+              </div>
+              <div>
                 <div className="font-medium text-white">Email</div>
                 <div className="text-sm">totalom.ind@gmail.com</div>
               </div>
@@ -109,7 +113,7 @@ export default function Footer() {
 
         <div className="border-t border-slate-800 mt-12 pt-8 text-center">
           <p className="text-slate-400">
-            &copy; 2024 TotalOM. All rights reserved.
+            &copy; 2024 Total Outsource Management. All rights reserved.
           </p>
         </div>
       </div>
