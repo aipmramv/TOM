@@ -1,0 +1,128 @@
+Revamped Website Content for www.totalom.com
+✅ Home Page
+Hero Section:
+
+Empowering Business through Digital Innovation
+We are your trusted partner for Web & Mobile Development, Digital Marketing, ITES-BPO, Custom Software, Data Analytics, and IT Consulting.
+Let’s build the future of your business.
+
+Call to Action:
+
+[Request a Consultation]
+
+[Explore Services]
+
+[Hire a Dedicated Team]
+
+🧩 Our Services
+🌐 Website & Web Application Development
+Responsive Websites, Portals, CMS (WordPress, Drupal, etc.)
+
+Custom Web Apps using modern tech stacks (React, Node.js, Laravel)
+
+📱 Mobile App Development
+Native & Cross-platform (iOS/Android)
+
+Flutter, React Native, Swift, Kotlin
+
+Enterprise & Customer-Facing Apps
+
+🚀 Digital Marketing
+SEO, SEM, Social Media Marketing
+
+PPC Ads, Email Campaigns, Content Strategy
+
+Branding & Online Reputation Management
+
+📞 ITES & BPO Services
+Customer Support (Voice/Non-Voice)
+
+Data Entry, Image Tagging, Form Processing
+
+Virtual Assistants, Order Processing
+
+⚙️ Custom Application Development
+ERP, CRM, Inventory, HRMS, Workflow Automation
+
+Integration with APIs and Cloud Services
+
+Agile/DevOps-driven execution
+
+📊 Data Analytics & BI
+Dashboards & Reports (Power BI, Tableau)
+
+Predictive Analytics & Forecasting
+
+Data Engineering & Data Cleaning
+
+🧠 IT Consulting
+IT Roadmapping & Digital Transformation
+
+Cloud Adoption (AWS, Azure, GCP)
+
+Cybersecurity & Infrastructure Planning
+
+🏢 About Us
+TotalOM is a next-gen IT & BPO services company based in Tamil Nadu, India. We combine deep technical expertise with strong industry knowledge to deliver digital solutions that drive business growth, reduce cost, and enhance customer experience.
+
+10+ years in global outsourcing
+
+100+ clients served across verticals
+
+Focused on quality, agility, and transparency
+
+👨‍💼 Industries We Serve
+Healthcare
+
+Education
+
+eCommerce & Retail
+
+Travel & Hospitality
+
+Manufacturing
+
+Government & Public Sector
+
+🤝 Why Choose TotalOM
+✅ Dedicated Teams
+
+✅ On-Time Delivery
+
+✅ Cost-Effective Pricing
+
+✅ NDA & Data Security
+
+✅ Flexible Engagement Models
+
+✅ 24x7 Support
+
+📬 Contact Us
+📍 F2, First Floor, ENPEE Arcade,
+1 Pakkirisamy Pillai Street, Eswari Nagar,
+Thanjavur - 613004, Tamil Nadu, India
+
+📞 +91-XXXXXXXXXX
+📧 totalom.ind@gmail.com
+🌐 www.totalom.com
+
+[Get in Touch] | [Schedule a Demo]
+
+🦾 Tech Stack Expertise
+Frontend: React, Angular, Vue, Tailwind
+
+Backend: Node.js, Laravel, Django, .NET Core
+
+Mobile: Flutter, React Native, Swift, Kotlin
+
+Cloud: AWS, Azure, GCP
+
+Tools: Power BI, Tableau, Zapier, Firebase
+
+📱 Mobile App Versions (for promotion)
+Admin App: Manage client tickets, teams, reporting
+
+Client App: Submit requests, track work, view reports
+
+Available on Google Play & Apple App Store
+
