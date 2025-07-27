@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Monitor, Smartphone, Database, Cloud } from "lucide-react";
+import { ExternalLink, Github, Monitor, Smartphone, Database, Cloud, Star, Award, Users, Zap, ArrowRight, Sparkles, Rocket } from "lucide-react";
 import AnimatedCard from "@/components/ui/animated-card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { staggerContainer } from "@/lib/animations";
+import { staggerContainer, fadeInUp } from "@/lib/animations";
+import logoPath from "@assets/tom-high-resolution-logo-transparent_1753645116528.png";
 
 const itProjects = [
   {
@@ -91,34 +92,177 @@ const bpoProjects = [
   },
 ];
 
+const portfolioStats = [
+  { number: "500+", label: "Projects Delivered", icon: Rocket },
+  { number: "98%", label: "Client Satisfaction", icon: Star },
+  { number: "50+", label: "Happy Clients", icon: Users },
+  { number: "24/7", label: "Support Available", icon: Zap },
+];
+
 export default function Portfolio() {
   return (
     <div className="pt-16">
-      {/* Hero Section */}
-      <section className="gradient-bg py-20 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1
-            className="text-5xl font-bold mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Our Portfolio
-          </motion.h1>
-          <motion.p
-            className="text-xl text-blue-100 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Showcasing our expertise through successful IT projects and comprehensive
-            BPO operations that have driven business growth for our clients.
-          </motion.p>
+      {/* Enhanced Hero Section */}
+      <section className="relative py-32 overflow-hidden min-h-[80vh] flex items-center">
+        {/* Enhanced Background with Multiple Gradients */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-900/50 via-transparent to-pink-900/30" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-purple-900/40 via-transparent to-transparent" />
+        
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse" />
+          <div className="absolute top-40 right-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000" />
+          <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000" />
         </div>
+
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px]" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+          <div className="text-center">
+            {/* Logo with Enhanced Glow */}
+            <motion.div
+              className="mb-8"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              <div className="relative inline-block">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-lg blur-xl opacity-75 animate-pulse" />
+                <img 
+                  src={logoPath} 
+                  alt="TotalOM Logo" 
+                  className="relative h-20 w-auto"
+                />
+              </div>
+            </motion.div>
+
+            <motion.h1
+              className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white mb-8 leading-tight"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <span className="block bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
+                Our Success
+              </span>
+              <span className="block bg-gradient-to-r from-amber-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+                Stories
+              </span>
+            </motion.h1>
+            
+            <motion.p
+              className="text-xl lg:text-2xl text-blue-100 leading-relaxed max-w-4xl mx-auto mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              Explore our portfolio of innovative IT solutions and comprehensive BPO services 
+              that have transformed businesses and delivered exceptional results across industries.
+            </motion.p>
+
+            {/* Portfolio Stats */}
+            <motion.div
+              className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              {portfolioStats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  className="text-center group"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                >
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-lg group-hover:blur-xl transition-all" />
+                    <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                      <stat.icon className="w-8 h-8 text-amber-400 mx-auto mb-3 group-hover:text-pink-400 transition-colors" />
+                      <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                        {stat.number}
+                      </div>
+                      <div className="text-sm text-blue-200">{stat.label}</div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Enhanced CTA Buttons */}
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1 }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="group"
+              >
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-6 text-lg font-bold rounded-xl shadow-xl relative overflow-hidden"
+                  onClick={() => document.getElementById('it-portfolio')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    View IT Projects
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Button>
+              </motion.div>
+              
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="group"
+              >
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="bg-white/10 hover:bg-white/20 text-white px-8 py-6 text-lg font-bold rounded-xl backdrop-blur-sm border-white/30 hover:border-white/50 transition-all"
+                  onClick={() => document.getElementById('bpo-portfolio')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  <span className="flex items-center gap-2">
+                    View BPO Services
+                    <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                  </span>
+                </Button>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+        >
+          <motion.div
+            className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <motion.div
+              className="w-1 h-3 bg-white/70 rounded-full mt-2"
+              animate={{ y: [0, 6, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* IT Portfolio Section */}
-      <section className="py-20 bg-white">
+      <section id="it-portfolio" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -127,6 +271,10 @@ export default function Portfolio() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <Monitor className="w-4 h-4" />
+              IT Solutions
+            </div>
             <h2 className="text-4xl font-bold text-slate-800 mb-4">IT Portfolio</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Custom software solutions, web applications, and mobile platforms
@@ -209,7 +357,7 @@ export default function Portfolio() {
       </section>
 
       {/* BPO Portfolio Section */}
-      <section className="py-20 bg-slate-100">
+      <section id="bpo-portfolio" className="py-20 bg-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -218,6 +366,10 @@ export default function Portfolio() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
+            <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <Users className="w-4 h-4" />
+              BPO Services
+            </div>
             <h2 className="text-4xl font-bold text-slate-800 mb-4">ITES & BPO Portfolio</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Comprehensive business process outsourcing operations that have helped
@@ -340,40 +492,116 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-slate-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            className="text-3xl font-bold text-slate-800 mb-4"
+      {/* Enhanced CTA Section */}
+      <section className="relative py-20 overflow-hidden">
+        {/* Background with Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600/50 via-transparent to-amber-600/30" />
+        
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full mix-blend-multiply filter blur-xl animate-pulse" />
+          <div className="absolute top-20 right-20 w-32 h-32 bg-white rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000" />
+          <div className="absolute bottom-10 left-1/3 w-32 h-32 bg-white rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000" />
+        </div>
+
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Ready to Start Your Project?
-          </motion.h2>
-          <motion.p
-            className="text-xl text-slate-600 mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            Let's discuss how we can help bring your vision to life with our
-            comprehensive IT and BPO services.
-          </motion.p>
-          <motion.a
-            href="/contact"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-block"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Start Your Project
-          </motion.a>
+            <motion.h2
+              className="text-3xl lg:text-5xl font-bold text-white mb-6"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              Ready to Transform Your Business?
+            </motion.h2>
+            
+            <motion.p
+              className="text-xl lg:text-2xl text-blue-100 mb-12 leading-relaxed"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              Join our portfolio of successful clients. Let's discuss how we can help 
+              bring your vision to life with our comprehensive IT and BPO services.
+            </motion.p>
+
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <motion.a
+                href="/contact"
+                className="group"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Button
+                  size="lg"
+                  className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg font-bold rounded-xl shadow-xl relative overflow-hidden"
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    Start Your Project
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-100/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Button>
+              </motion.a>
+              
+              <motion.a
+                href="/contact"
+                className="group"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="bg-white/10 hover:bg-white/20 text-white px-8 py-6 text-lg font-bold rounded-xl backdrop-blur-sm border-white/30 hover:border-white/50 transition-all"
+                >
+                  <span className="flex items-center gap-2">
+                    Get Free Consultation
+                    <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                  </span>
+                </Button>
+              </motion.a>
+            </motion.div>
+
+            {/* Contact Info */}
+            <motion.div
+              className="mt-12 pt-8 border-t border-white/20"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <p className="text-blue-100 mb-4">Ready to get started? Reach out to us today!</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-blue-100">
+                <span className="flex items-center gap-2">
+                  <Award className="w-4 h-4" />
+                  ISO Certified Quality
+                </span>
+                <span className="flex items-center gap-2">
+                  <Zap className="w-4 h-4" />
+                  24/7 Support Available
+                </span>
+                <span className="flex items-center gap-2">
+                  <Star className="w-4 h-4" />
+                  98% Client Satisfaction
+                </span>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </div>

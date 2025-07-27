@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoPath from "@assets/tom-high-resolution-logo-transparent_1753645116528.png";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -24,11 +25,15 @@ export default function Navigation() {
           <div className="flex items-center">
             <Link href="/">
               <motion.div 
-                className="text-2xl font-bold gradient-text cursor-pointer"
+                className="flex items-center cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                TotalOM
+                <img 
+                  src={logoPath} 
+                  alt="TotalOM Logo" 
+                  className="h-10 w-auto"
+                />
               </motion.div>
             </Link>
           </div>
