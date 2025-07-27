@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import TechIllustration from "@/components/graphics/tech-illustration";
+import AITechIllustration from "@/components/graphics/ai-tech-illustration";
 import FloatingShapes from "@/components/ui/floating-shapes";
 import { ArrowRight, Sparkles, Zap, Rocket } from "lucide-react";
 import logoPath from "@assets/tom-high-resolution-logo-transparent_1753645116528.png";
@@ -141,9 +141,10 @@ export default function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            {/* Glow Effect Behind Illustration */}
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full blur-3xl animate-pulse" />
-            <TechIllustration />
+            {/* Enhanced Glow Effect Behind Illustration */}
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute inset-0 bg-gradient-to-br from-green-400/10 to-purple-600/10 rounded-full blur-2xl animate-pulse animation-delay-1000" />
+            <AITechIllustration />
           </motion.div>
         </div>
       </div>
