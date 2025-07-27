@@ -71,7 +71,7 @@ export default function ContactSection() {
     {
       icon: Phone,
       title: "Phone",
-      details: "+91-XXXXXXXXXX",
+      details: "+91 9884411456",
       color: "bg-green-500",
     },
     {

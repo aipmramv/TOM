@@ -39,15 +39,15 @@ export default function HeroSection() {
             
 
             <motion.h1
-              className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight"
+              className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight text-center lg:text-left"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="block bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent drop-shadow-lg">
                 Transform Your
               </span>
-              <span className="block bg-gradient-to-r from-amber-300 via-yellow-300 to-orange-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-500 bg-clip-text text-transparent drop-shadow-lg">
                 Digital Future
               </span>
             </motion.h1>

@@ -5,7 +5,6 @@ import {
   ShoppingCart, 
   Plane, 
   Factory, 
-  Building2,
   Truck,
   Home
 } from "lucide-react";
@@ -96,23 +95,6 @@ const industries = [
     color: "from-red-500 to-red-600",
     bgColor: "bg-red-50",
     iconColor: "text-red-600",
-  },
-  {
-    icon: Building2,
-    name: "Government & Public Sector",
-    description: "Digital governance and citizen service platforms",
-    solutions: [
-      "Citizen Service Portals",
-      "Document Management Systems",
-      "Public Information Systems",
-      "Digital Identity Solutions",
-      "Workflow Automation",
-      "Transparency & Reporting Tools"
-    ],
-    caseStudy: "Developed a citizen portal that reduced processing time for government services by 60%.",
-    color: "from-indigo-500 to-indigo-600",
-    bgColor: "bg-indigo-50",
-    iconColor: "text-indigo-600",
   },
   {
     icon: Truck,
