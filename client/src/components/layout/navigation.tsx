@@ -25,7 +25,7 @@ export default function Navigation() {
           <div className="flex items-center">
             <Link href="/">
               <motion.div 
-                className="flex items-center cursor-pointer"
+                className="flex items-center gap-3 cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -34,6 +34,18 @@ export default function Navigation() {
                   alt="TotalOM Logo" 
                   className="h-16 w-auto"
                 />
+                <div className="flex flex-col">
+                  <div className="font-bold text-xl leading-tight">
+                    <span className="text-blue-600">T</span>
+                    <span className="text-slate-700">otal </span>
+                    <span className="text-orange-500">O</span>
+                    <span className="text-slate-700">utsource</span>
+                  </div>
+                  <div className="font-bold text-xl leading-tight">
+                    <span className="text-purple-600">M</span>
+                    <span className="text-slate-700">anagement</span>
+                  </div>
+                </div>
               </motion.div>
             </Link>
           </div>
