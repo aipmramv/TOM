@@ -1,253 +1,182 @@
 import { motion } from "framer-motion";
-import { Globe, Smartphone, Megaphone, Headphones, Settings, BarChart3, Brain } from "lucide-react";
-import AnimatedCard from "@/components/ui/animated-card";
-import { staggerContainer } from "@/lib/animations";
+import { Globe, Smartphone, Megaphone, Headphones, Settings, BarChart3 } from "lucide-react";
+import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 const services = [
   {
     icon: Globe,
     title: "Website & Web Application Development",
-    description: "Create stunning, responsive websites and powerful web applications that drive your business forward.",
+    description: "Custom web solutions built with modern technologies",
     features: [
       "Responsive Website Design",
-      "Custom Web Portals",
-      "CMS Development (WordPress, Drupal)",
-      "E-commerce Solutions",
+      "E-commerce Platforms",
+      "Content Management Systems (WordPress, Drupal)",
+      "Custom Web Applications (React, Angular, Vue)",
       "Progressive Web Apps (PWA)",
-      "Modern Tech Stack (React, Node.js, Laravel)",
+      "API Development & Integration"
     ],
-    color: "from-blue-50 to-blue-100",
-    iconColor: "bg-blue-500",
-    borderColor: "border-blue-200",
+    technologies: ["React", "Node.js", "Laravel", "WordPress", "Shopify"],
+    color: "from-blue-500 to-blue-600",
+    bgColor: "bg-blue-50",
   },
   {
     icon: Smartphone,
     title: "Mobile App Development",
-    description: "Native and cross-platform mobile applications that deliver exceptional user experiences.",
+    description: "Native and cross-platform mobile applications",
     features: [
       "iOS App Development (Swift)",
-      "Android App Development (Kotlin)",
-      "Cross-platform Apps (Flutter, React Native)",
-      "Enterprise Mobile Solutions",
-      "Customer-facing Applications",
+      "Android App Development (Kotlin/Java)",
+      "Cross-platform Development (Flutter, React Native)",
+      "UI/UX Design for Mobile",
       "App Store Optimization",
+      "Mobile App Testing & QA"
     ],
-    color: "from-purple-50 to-purple-100",
-    iconColor: "bg-purple-500",
-    borderColor: "border-purple-200",
+    technologies: ["Flutter", "React Native", "Swift", "Kotlin", "Xamarin"],
+    color: "from-purple-500 to-purple-600",
+    bgColor: "bg-purple-50",
   },
   {
     icon: Megaphone,
     title: "Digital Marketing",
-    description: "Comprehensive digital marketing strategies to boost your online presence and drive growth.",
+    description: "Comprehensive digital marketing strategies",
     features: [
       "Search Engine Optimization (SEO)",
       "Search Engine Marketing (SEM)",
       "Social Media Marketing",
       "Pay-Per-Click Advertising (PPC)",
       "Email Marketing Campaigns",
-      "Content Strategy & Creation",
-      "Brand Management",
-      "Online Reputation Management",
+      "Content Marketing Strategy"
     ],
-    color: "from-amber-50 to-amber-100",
-    iconColor: "bg-amber-500",
-    borderColor: "border-amber-200",
+    technologies: ["Google Ads", "Facebook Ads", "Google Analytics", "SEMrush", "Mailchimp"],
+    color: "from-amber-500 to-amber-600",
+    bgColor: "bg-amber-50",
   },
   {
     icon: Headphones,
     title: "ITES & BPO Services",
-    description: "Professional outsourcing services to streamline your operations and reduce costs.",
+    description: "Comprehensive business process outsourcing solutions",
     features: [
       "Customer Support (Voice & Non-Voice)",
       "Technical Support Services",
       "Data Entry & Processing",
-      "Image Tagging & Content Moderation",
-      "Form Processing & Documentation",
       "Virtual Assistant Services",
       "Order Processing & Management",
-      "Back Office Operations",
+      "Lead Generation & Qualification"
     ],
-    color: "from-green-50 to-green-100",
-    iconColor: "bg-green-500",
-    borderColor: "border-green-200",
+    technologies: ["CRM Systems", "Helpdesk Software", "VoIP", "Chat Support", "Ticketing Systems"],
+    color: "from-green-500 to-green-600",
+    bgColor: "bg-green-50",
   },
   {
     icon: Settings,
     title: "Custom Application Development",
-    description: "Tailored software solutions designed to meet your specific business requirements.",
+    description: "Tailored software solutions for your business",
     features: [
       "Enterprise Resource Planning (ERP)",
       "Customer Relationship Management (CRM)",
       "Inventory Management Systems",
       "Human Resource Management (HRMS)",
-      "Workflow Automation Tools",
-      "API Development & Integration",
-      "Cloud-based Solutions",
-      "Legacy System Modernization",
+      "Workflow Automation",
+      "Third-party API Integration"
     ],
-    color: "from-red-50 to-red-100",
-    iconColor: "bg-red-500",
-    borderColor: "border-red-200",
+    technologies: [".NET", "Java", "Python", "PHP", "SQL Server", "MySQL"],
+    color: "from-red-500 to-red-600",
+    bgColor: "bg-red-50",
   },
   {
     icon: BarChart3,
     title: "Data Analytics & Business Intelligence",
-    description: "Transform your data into actionable insights for better decision-making.",
+    description: "Transform data into actionable insights",
     features: [
-      "Interactive Dashboards (Power BI, Tableau)",
-      "Business Intelligence Solutions",
-      "Predictive Analytics & Forecasting",
-      "Data Visualization & Reporting",
-      "Data Engineering & ETL Processes",
-      "Data Cleaning & Preparation",
-      "Performance Analytics",
-      "Real-time Monitoring Systems",
+      "Business Intelligence Dashboards",
+      "Data Visualization (Power BI, Tableau)",
+      "Predictive Analytics",
+      "Data Engineering & ETL",
+      "Custom Reports & KPI Tracking",
+      "Data Warehouse Solutions"
     ],
-    color: "from-indigo-50 to-indigo-100",
-    iconColor: "bg-indigo-500",
-    borderColor: "border-indigo-200",
-  },
-  {
-    icon: Brain,
-    title: "IT Consulting",
-    description: "Strategic IT guidance to help you navigate digital transformation and technology adoption.",
-    features: [
-      "IT Strategy & Roadmapping",
-      "Digital Transformation Consulting",
-      "Cloud Adoption (AWS, Azure, GCP)",
-      "Cybersecurity Assessment",
-      "Infrastructure Planning",
-      "Technology Architecture Design",
-      "IT Project Management",
-      "Vendor Selection & Management",
-    ],
-    color: "from-teal-50 to-teal-100",
-    iconColor: "bg-teal-500",
-    borderColor: "border-teal-200",
+    technologies: ["Power BI", "Tableau", "Python", "R", "SQL", "Azure", "AWS"],
+    color: "from-indigo-500 to-indigo-600",
+    bgColor: "bg-indigo-50",
   },
 ];
 
 export default function Services() {
   return (
-    <div className="pt-16">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="gradient-bg py-20 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1
-            className="text-5xl font-bold mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+      <section className="pt-24 pb-16 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center text-white"
+            variants={fadeInUp}
+            initial="initial"
+            animate="animate"
           >
-            Our Services
-          </motion.h1>
-          <motion.p
-            className="text-xl text-blue-100 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Comprehensive digital solutions designed to accelerate your business growth
-            and drive innovation across all aspects of your operations.
-          </motion.p>
+            <h1 className="text-5xl font-bold mb-6">Our Services</h1>
+            <p className="text-xl max-w-3xl mx-auto">
+              Comprehensive digital solutions to transform your business and drive growth
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="grid lg:grid-cols-2 gap-12"
+            className="grid gap-12"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
           >
             {services.map((service, index) => (
-              <AnimatedCard key={service.title} delay={index * 0.1}>
-                <div className={`bg-gradient-to-br ${service.color} p-8 rounded-xl border ${service.borderColor} h-full`}>
-                  <motion.div
-                    className={`w-16 h-16 ${service.iconColor} rounded-xl mb-6 flex items-center justify-center`}
-                    whileHover={{ 
-                      scale: 1.1, 
-                      rotate: 5,
-                      transition: { duration: 0.2 }
-                    }}
-                  >
-                    <service.icon className="text-white text-2xl" />
-                  </motion.div>
-                  
-                  <h3 className="text-2xl font-semibold text-slate-800 mb-4">
-                    {service.title}
-                  </h3>
-                  
-                  <p className="text-slate-600 mb-6">
-                    {service.description}
-                  </p>
-                  
-                  <div className="space-y-2">
-                    <h4 className="font-semibold text-slate-800 mb-3">Key Features:</h4>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start space-x-2 text-slate-600">
-                          <span className="text-green-500 mt-1">•</span>
-                          <span>{feature}</span>
+              <motion.div
+                key={service.title}
+                className={`${service.bgColor} rounded-3xl p-8 lg:p-12`}
+                variants={fadeInUp}
+                whileHover={{ y: -5, transition: { duration: 0.3 } }}
+              >
+                <div className="grid lg:grid-cols-2 gap-8 items-center">
+                  <div>
+                    <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl mb-6 flex items-center justify-center`}>
+                      <service.icon className="text-white text-2xl" />
+                    </div>
+                    <h2 className="text-3xl font-bold text-slate-800 mb-4">
+                      {service.title}
+                    </h2>
+                    <p className="text-lg text-slate-600 mb-6">
+                      {service.description}
+                    </p>
+                    <div className="mb-6">
+                      <h3 className="text-lg font-semibold text-slate-800 mb-3">Technologies:</h3>
+                      <div className="flex flex-wrap gap-2">
+                        {service.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-3 py-1 bg-white rounded-full text-sm font-medium text-slate-700 shadow-sm"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-800 mb-4">Key Features:</h3>
+                    <ul className="space-y-3">
+                      {service.features.map((feature) => (
+                        <li key={feature} className="flex items-start">
+                          <div className={`w-2 h-2 bg-gradient-to-r ${service.color} rounded-full mt-2 mr-3 flex-shrink-0`} />
+                          <span className="text-slate-600">{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
-              </AnimatedCard>
+              </motion.div>
             ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-slate-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            className="text-3xl font-bold text-slate-800 mb-4"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            Ready to Get Started?
-          </motion.h2>
-          <motion.p
-            className="text-xl text-slate-600 mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            Let's discuss how our services can help transform your business and drive growth.
-          </motion.p>
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <motion.a
-              href="/contact"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-block"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Get a Quote
-            </motion.a>
-            <motion.a
-              href="/portfolio"
-              className="bg-white hover:bg-gray-50 text-slate-800 px-8 py-4 rounded-lg font-semibold border border-slate-300 transition-colors inline-block"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              View Our Work
-            </motion.a>
           </motion.div>
         </div>
       </section>

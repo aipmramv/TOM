@@ -6,305 +6,276 @@ import {
   Plane, 
   Factory, 
   Building2,
-  Stethoscope,
-  BookOpen,
-  CreditCard,
-  MapPin,
-  Wrench,
-  Users
+  Truck,
+  Home,
+  Banknote
 } from "lucide-react";
-import AnimatedCard from "@/components/ui/animated-card";
-import { staggerContainer } from "@/lib/animations";
+import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 const industries = [
   {
     icon: Heart,
     name: "Healthcare",
-    description: "Comprehensive digital solutions for healthcare providers, hospitals, and medical practices.",
-    features: [
-      "Electronic Health Records (EHR) Systems",
+    description: "Digital solutions for hospitals, clinics, and healthcare providers",
+    solutions: [
+      "Hospital Management Systems",
+      "Patient Portal Development",
       "Telemedicine Platforms",
-      "Patient Management Solutions",
-      "Medical Billing & Claims Processing",
-      "Healthcare Analytics & Reporting",
-      "HIPAA Compliant Applications",
+      "Medical Records Management",
+      "Appointment Scheduling Systems",
+      "Healthcare Analytics & Reporting"
     ],
-    color: "from-blue-50 to-blue-100",
-    iconColor: "bg-blue-500",
-    borderColor: "border-blue-200",
-    stats: { projects: "25+", clients: "Healthcare Providers" },
+    caseStudy: "Developed a comprehensive telemedicine platform that increased patient consultations by 300% during the pandemic.",
+    color: "from-blue-500 to-blue-600",
+    bgColor: "bg-blue-50",
+    iconColor: "text-blue-600",
   },
   {
     icon: GraduationCap,
     name: "Education",
-    description: "Innovative EdTech solutions for educational institutions and online learning platforms.",
-    features: [
+    description: "Learning management systems and educational technology solutions",
+    solutions: [
       "Learning Management Systems (LMS)",
       "Student Information Systems",
-      "Online Assessment Platforms",
+      "Online Examination Platforms",
       "Virtual Classroom Solutions",
-      "Educational Content Management",
-      "Mobile Learning Applications",
+      "Educational Mobile Apps",
+      "Student Performance Analytics"
     ],
-    color: "from-green-50 to-green-100",
-    iconColor: "bg-green-500",
-    borderColor: "border-green-200",
-    stats: { projects: "30+", clients: "Educational Institutions" },
+    caseStudy: "Built an LMS platform that supported 10,000+ students during remote learning transition.",
+    color: "from-green-500 to-green-600",
+    bgColor: "bg-green-50",
+    iconColor: "text-green-600",
   },
   {
     icon: ShoppingCart,
     name: "eCommerce & Retail",
-    description: "End-to-end eCommerce solutions and retail management systems.",
-    features: [
-      "Custom eCommerce Platforms",
+    description: "Complete digital commerce solutions and retail management systems",
+    solutions: [
+      "eCommerce Website Development",
+      "Multi-vendor Marketplaces",
       "Inventory Management Systems",
-      "Payment Gateway Integration",
-      "Order Management Solutions",
+      "Point of Sale (POS) Systems",
       "Customer Loyalty Programs",
-      "Multi-channel Retail Solutions",
+      "Supply Chain Management"
     ],
-    color: "from-purple-50 to-purple-100",
-    iconColor: "bg-purple-500",
-    borderColor: "border-purple-200",
-    stats: { projects: "40+", clients: "Retail Businesses" },
+    caseStudy: "Launched an eCommerce platform that achieved $2M+ in sales within the first year.",
+    color: "from-purple-500 to-purple-600",
+    bgColor: "bg-purple-50",
+    iconColor: "text-purple-600",
   },
   {
     icon: Plane,
     name: "Travel & Hospitality",
-    description: "Comprehensive solutions for travel agencies, hotels, and hospitality businesses.",
-    features: [
-      "Booking & Reservation Systems",
-      "Hotel Management Solutions",
-      "Travel Portal Development",
-      "Customer Loyalty Programs",
-      "Revenue Management Systems",
-      "Mobile Travel Applications",
+    description: "Booking systems and customer management for travel industry",
+    solutions: [
+      "Hotel Booking Systems",
+      "Travel Booking Platforms",
+      "Property Management Systems",
+      "Customer Review Platforms",
+      "Mobile Travel Apps",
+      "Revenue Management Systems"
     ],
-    color: "from-amber-50 to-amber-100",
-    iconColor: "bg-amber-500",
-    borderColor: "border-amber-200",
-    stats: { projects: "20+", clients: "Travel Companies" },
+    caseStudy: "Created a hotel management system that improved booking efficiency by 40%.",
+    color: "from-amber-500 to-amber-600",
+    bgColor: "bg-amber-50",
+    iconColor: "text-amber-600",
   },
   {
     icon: Factory,
     name: "Manufacturing",
-    description: "Digital transformation solutions for manufacturing and industrial operations.",
-    features: [
-      "Enterprise Resource Planning (ERP)",
-      "Supply Chain Management",
-      "Quality Control Systems",
-      "Production Planning Tools",
-      "Asset Management Solutions",
-      "IoT Integration & Analytics",
+    description: "Industrial automation and process management solutions",
+    solutions: [
+      "Manufacturing Execution Systems",
+      "Quality Management Systems",
+      "Supply Chain Optimization",
+      "Inventory Tracking Systems",
+      "Production Planning Software",
+      "Equipment Maintenance Systems"
     ],
-    color: "from-red-50 to-red-100",
-    iconColor: "bg-red-500",
-    borderColor: "border-red-200",
-    stats: { projects: "15+", clients: "Manufacturing Units" },
+    caseStudy: "Implemented an MES system that reduced production costs by 25%.",
+    color: "from-red-500 to-red-600",
+    bgColor: "bg-red-50",
+    iconColor: "text-red-600",
   },
   {
     icon: Building2,
     name: "Government & Public Sector",
-    description: "Secure and compliant solutions for government agencies and public institutions.",
-    features: [
+    description: "Digital governance and citizen service platforms",
+    solutions: [
       "Citizen Service Portals",
       "Document Management Systems",
-      "Compliance & Audit Tools",
       "Public Information Systems",
-      "E-governance Solutions",
-      "Data Security & Privacy Tools",
+      "Digital Identity Solutions",
+      "Workflow Automation",
+      "Transparency & Reporting Tools"
     ],
-    color: "from-indigo-50 to-indigo-100",
-    iconColor: "bg-indigo-500",
-    borderColor: "border-indigo-200",
-    stats: { projects: "10+", clients: "Government Agencies" },
+    caseStudy: "Developed a citizen portal that reduced processing time for government services by 60%.",
+    color: "from-indigo-500 to-indigo-600",
+    bgColor: "bg-indigo-50",
+    iconColor: "text-indigo-600",
+  },
+  {
+    icon: Banknote,
+    name: "Finance & Banking",
+    description: "Secure financial software and payment solutions",
+    solutions: [
+      "Banking Management Systems",
+      "Payment Gateway Integration",
+      "Loan Management Systems",
+      "Financial Analytics Platforms",
+      "Mobile Banking Apps",
+      "Compliance & Risk Management"
+    ],
+    caseStudy: "Built a digital banking platform serving 50,000+ customers with 99.9% uptime.",
+    color: "from-cyan-500 to-cyan-600",
+    bgColor: "bg-cyan-50",
+    iconColor: "text-cyan-600",
+  },
+  {
+    icon: Truck,
+    name: "Logistics & Transportation",
+    description: "Fleet management and logistics optimization systems",
+    solutions: [
+      "Fleet Management Systems",
+      "Route Optimization Software",
+      "Warehouse Management Systems",
+      "Delivery Tracking Platforms",
+      "Transport Management Systems",
+      "Logistics Analytics"
+    ],
+    caseStudy: "Optimized delivery routes resulting in 30% reduction in fuel costs.",
+    color: "from-orange-500 to-orange-600",
+    bgColor: "bg-orange-50",
+    iconColor: "text-orange-600",
+  },
+  {
+    icon: Home,
+    name: "Real Estate",
+    description: "Property management and real estate platforms",
+    solutions: [
+      "Property Management Systems",
+      "Real Estate Marketplaces",
+      "CRM for Real Estate",
+      "Virtual Property Tours",
+      "Rental Management Platforms",
+      "Property Analytics Tools"
+    ],
+    caseStudy: "Created a property marketplace that connected 1,000+ buyers and sellers.",
+    color: "from-teal-500 to-teal-600",
+    bgColor: "bg-teal-50",
+    iconColor: "text-teal-600",
   },
 ];
 
 export default function Industries() {
   return (
-    <div className="pt-16">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="gradient-bg py-20 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1
-            className="text-5xl font-bold mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+      <section className="pt-24 pb-16 bg-gradient-to-r from-slate-800 to-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center text-white"
+            variants={fadeInUp}
+            initial="initial"
+            animate="animate"
           >
-            Industries We Serve
-          </motion.h1>
-          <motion.p
-            className="text-xl text-blue-100 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Specialized digital solutions tailored to meet the unique challenges
-            and requirements of diverse industry sectors.
-          </motion.p>
+            <h1 className="text-5xl font-bold mb-6">Industries We Serve</h1>
+            <p className="text-xl max-w-3xl mx-auto">
+              Delivering specialized solutions across diverse sectors with deep industry expertise
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Industries Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="grid lg:grid-cols-2 gap-12"
+            className="grid gap-12"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
           >
             {industries.map((industry, index) => (
-              <AnimatedCard key={industry.name} delay={index * 0.1}>
-                <div className={`bg-gradient-to-br ${industry.color} p-8 rounded-xl border ${industry.borderColor} h-full`}>
-                  <div className="flex items-start justify-between mb-6">
-                    <motion.div
-                      className={`w-16 h-16 ${industry.iconColor} rounded-xl flex items-center justify-center`}
-                      whileHover={{ 
-                        scale: 1.1, 
-                        rotate: 5,
-                        transition: { duration: 0.2 }
-                      }}
-                    >
+              <motion.div
+                key={industry.name}
+                className={`${industry.bgColor} rounded-3xl p-8 lg:p-12`}
+                variants={fadeInUp}
+                whileHover={{ y: -5, transition: { duration: 0.3 } }}
+              >
+                <div className="grid lg:grid-cols-3 gap-8">
+                  {/* Industry Info */}
+                  <div className="lg:col-span-1">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${industry.color} rounded-2xl mb-6 flex items-center justify-center`}>
                       <industry.icon className="text-white text-2xl" />
-                    </motion.div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold text-slate-800">{industry.stats.projects}</div>
-                      <div className="text-sm text-slate-600">Projects Completed</div>
+                    </div>
+                    <h2 className="text-2xl font-bold text-slate-800 mb-4">
+                      {industry.name}
+                    </h2>
+                    <p className="text-slate-600 mb-6 leading-relaxed">
+                      {industry.description}
+                    </p>
+                    <div className="bg-white p-4 rounded-xl">
+                      <h4 className="font-semibold text-slate-800 mb-2">Success Story</h4>
+                      <p className="text-sm text-slate-600 italic">
+                        {industry.caseStudy}
+                      </p>
                     </div>
                   </div>
-                  
-                  <h3 className="text-2xl font-semibold text-slate-800 mb-4">
-                    {industry.name}
-                  </h3>
-                  
-                  <p className="text-slate-600 mb-6">
-                    {industry.description}
-                  </p>
-                  
-                  <div className="space-y-2">
-                    <h4 className="font-semibold text-slate-800 mb-3">Our Solutions:</h4>
-                    <ul className="space-y-2">
-                      {industry.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start space-x-2 text-slate-600">
-                          <span className="text-green-500 mt-1">•</span>
-                          <span>{feature}</span>
-                        </li>
+
+                  {/* Solutions */}
+                  <div className="lg:col-span-2">
+                    <h3 className="text-xl font-semibold text-slate-800 mb-6">Our Solutions</h3>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      {industry.solutions.map((solution, solutionIndex) => (
+                        <motion.div
+                          key={solution}
+                          className="flex items-start bg-white p-4 rounded-xl shadow-sm"
+                          initial={{ opacity: 0, x: 20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.4, delay: solutionIndex * 0.1 }}
+                          viewport={{ once: true }}
+                          whileHover={{ x: 5, transition: { duration: 0.2 } }}
+                        >
+                          <div className={`w-2 h-2 bg-gradient-to-r ${industry.color} rounded-full mt-2 mr-3 flex-shrink-0`} />
+                          <span className="text-slate-700 font-medium">{solution}</span>
+                        </motion.div>
                       ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="mt-6 pt-4 border-t border-slate-200">
-                    <div className="text-sm text-slate-600">
-                      <strong>Serving:</strong> {industry.stats.clients}
                     </div>
                   </div>
                 </div>
-              </AnimatedCard>
+              </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Industry Expertise */}
-      <section className="py-20 bg-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">
-              Cross-Industry Expertise
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Our deep understanding of industry-specific challenges enables us to
-              deliver solutions that address real business needs and drive measurable results.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <AnimatedCard>
-              <div className="text-center p-8 bg-white rounded-xl h-full">
-                <Stethoscope className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-slate-800 mb-4">
-                  Domain Knowledge
-                </h3>
-                <p className="text-slate-600">
-                  Deep understanding of industry regulations, compliance requirements,
-                  and business processes specific to each sector.
-                </p>
-              </div>
-            </AnimatedCard>
-
-            <AnimatedCard delay={0.1}>
-              <div className="text-center p-8 bg-white rounded-xl h-full">
-                <BookOpen className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-slate-800 mb-4">
-                  Best Practices
-                </h3>
-                <p className="text-slate-600">
-                  Implementation of industry best practices and proven methodologies
-                  to ensure optimal performance and results.
-                </p>
-              </div>
-            </AnimatedCard>
-
-            <AnimatedCard delay={0.2}>
-              <div className="text-center p-8 bg-white rounded-xl h-full">
-                <CreditCard className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-slate-800 mb-4">
-                  Scalable Solutions
-                </h3>
-                <p className="text-slate-600">
-                  Flexible and scalable solutions designed to grow with your business
-                  and adapt to changing industry demands.
-                </p>
-              </div>
-            </AnimatedCard>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            className="text-3xl font-bold text-slate-800 mb-4"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+          <motion.div
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="animate"
             viewport={{ once: true }}
           >
-            Don't See Your Industry?
-          </motion.h2>
-          <motion.p
-            className="text-xl text-slate-600 mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            We work with businesses across all sectors. Let's discuss how we can
-            help solve your specific industry challenges.
-          </motion.p>
-          <motion.a
-            href="/contact"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-block"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get in Touch
-          </motion.a>
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Don't See Your Industry?
+            </h2>
+            <p className="text-xl text-blue-100 mb-8">
+              We work with businesses across all sectors. Let's discuss your specific needs.
+            </p>
+            <motion.a
+              href="/contact"
+              className="inline-block bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Contact Us Today
+            </motion.a>
+          </motion.div>
         </div>
       </section>
     </div>

@@ -38,7 +38,7 @@ export default function Navigation() {
             <div className="ml-10 flex items-baseline space-x-8">
               {navItems.map((item) => (
                 <Link key={item.href} href={item.href}>
-                  <motion.a
+                  <motion.span
                     className={`transition-colors cursor-pointer ${
                       location === item.href
                         ? "text-blue-600 font-medium"
@@ -48,7 +48,7 @@ export default function Navigation() {
                     transition={{ duration: 0.2 }}
                   >
                     {item.label}
-                  </motion.a>
+                  </motion.span>
                 </Link>
               ))}
             </div>
@@ -80,7 +80,7 @@ export default function Navigation() {
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <Link key={item.href} href={item.href}>
-                  <motion.a
+                  <motion.span
                     className={`block px-3 py-2 rounded-md text-base font-medium cursor-pointer ${
                       location === item.href
                         ? "text-blue-600 bg-blue-50"
@@ -90,7 +90,7 @@ export default function Navigation() {
                     whileHover={{ x: 4 }}
                   >
                     {item.label}
-                  </motion.a>
+                  </motion.span>
                 </Link>
               ))}
             </div>

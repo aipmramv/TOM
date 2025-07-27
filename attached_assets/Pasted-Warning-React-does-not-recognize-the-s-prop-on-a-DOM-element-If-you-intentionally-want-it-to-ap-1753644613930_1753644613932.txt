@@ -1,0 +1,25 @@
+Warning: React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element.%s whileTap whiletap 
+    at button
+    at _c (https://66c983bd-1f9a-4e9c-bda3-3f6a2f6639d5-00-1keuux2a4joh6.kirk.replit.dev/src/components/ui/button.tsx:47:11)
+    at a
+    at https://66c983bd-1f9a-4e9c-bda3-3f6a2f6639d5-00-1keuux2a4joh6.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=443a4af9:337:18
+    at div
+    at MotionComponent (https://66c983bd-1f9a-4e9c-bda3-3f6a2f6639d5-00-1keuux2a4joh6.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=5f84ec6a:6536:40)
+    at div
+    at MotionComponent (https://66c983bd-1f9a-4e9c-bda3-3f6a2f6639d5-00-1keuux2a4joh6.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=5f84ec6a:6536:40)
+    at div
+    at div
+    at section
+    at HeroSection
+    at div
+    at MotionComponent (https://66c983bd-1f9a-4e9c-bda3-3f6a2f6639d5-00-1keuux2a4joh6.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=5f84ec6a:6536:40)
+    at Home
+    at Route (https://66c983bd-1f9a-4e9c-bda3-3f6a2f6639d5-00-1keuux2a4joh6.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=443a4af9:323:16)
+    at Switch (https://66c983bd-1f9a-4e9c-bda3-3f6a2f6639d5-00-1keuux2a4joh6.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=443a4af9:379:17)
+    at main
+    at div
+    at Router
+    at Provider (https://66c983bd-1f9a-4e9c-bda3-3f6a2f6639d5-00-1keuux2a4joh6.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-V4VFXNSQ.js?v=47a5a19c:42:15)
+    at TooltipProvider (https://66c983bd-1f9a-4e9c-bda3-3f6a2f6639d5-00-1keuux2a4joh6.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=12186a96:2251:5)
+    at QueryClientProvider (https://66c983bd-1f9a-4e9c-bda3-3f6a2f6639d5-00-1keuux2a4joh6.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=21e7e325:2805:3)
+    at App

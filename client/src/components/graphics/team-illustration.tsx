@@ -2,107 +2,119 @@ import { motion } from "framer-motion";
 
 export default function TeamIllustration() {
   return (
-    <div className="relative w-full h-96 bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl flex items-center justify-center overflow-hidden">
-      {/* Floating team member representations */}
-      <motion.div
-        className="absolute top-8 left-8 w-16 h-16 bg-blue-400 rounded-full opacity-80"
-        animate={{
-          y: [0, -15, 0],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      
-      <motion.div
-        className="absolute top-12 right-12 w-12 h-12 bg-amber-400 rounded-full opacity-80"
-        animate={{
-          y: [0, -12, 0],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: -1,
-        }}
-      />
-      
-      <motion.div
-        className="absolute bottom-12 left-12 w-20 h-20 bg-purple-400 rounded-full opacity-80"
-        animate={{
-          y: [0, -18, 0],
-        }}
-        transition={{
-          duration: 7,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: -2,
-        }}
-      />
-      
-      <motion.div
-        className="absolute bottom-8 right-8 w-14 h-14 bg-green-400 rounded-full opacity-80"
-        animate={{
-          y: [0, -14, 0],
-        }}
-        transition={{
-          duration: 5.5,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: -3,
-        }}
-      />
-
-      {/* Central team icon */}
-      <motion.div
-        className="text-center z-10"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
+    <div className="relative w-full h-96 flex items-center justify-center">
+      <svg
+        width="400"
+        height="300"
+        viewBox="0 0 400 300"
+        className="w-full h-full"
       >
-        <motion.div
+        {/* Background */}
+        <motion.rect
+          x="50"
+          y="50"
+          width="300"
+          height="200"
+          rx="20"
+          fill="rgba(59,130,246,0.1)"
+          stroke="rgba(59,130,246,0.2)"
+          strokeWidth="2"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1 }}
+        />
+
+        {/* Team Members */}
+        <motion.g
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          {/* Person 1 */}
+          <circle cx="130" cy="130" r="20" fill="rgba(59,130,246,0.8)" />
+          <rect x="120" y="150" width="20" height="40" rx="10" fill="rgba(59,130,246,0.6)" />
+          
+          {/* Person 2 */}
+          <circle cx="200" cy="120" r="22" fill="rgba(168,85,247,0.8)" />
+          <rect x="188" y="142" width="24" height="45" rx="12" fill="rgba(168,85,247,0.6)" />
+          
+          {/* Person 3 */}
+          <circle cx="270" cy="135" r="18" fill="rgba(16,185,129,0.8)" />
+          <rect x="262" y="153" width="16" height="35" rx="8" fill="rgba(16,185,129,0.6)" />
+        </motion.g>
+
+        {/* Meeting Table */}
+        <motion.ellipse
+          cx="200"
+          cy="200"
+          rx="80"
+          ry="20"
+          fill="rgba(71,85,105,0.2)"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        />
+
+        {/* Laptops on table */}
+        <motion.g
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        >
+          <rect x="150" y="190" width="30" height="20" rx="2" fill="rgba(71,85,105,0.6)" />
+          <rect x="220" y="185" width="25" height="18" rx="2" fill="rgba(71,85,105,0.6)" />
+        </motion.g>
+
+        {/* Speech Bubbles */}
+        <motion.g
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 1.2 }}
+        >
+          <ellipse cx="110" cy="100" rx="20" ry="12" fill="rgba(255,255,255,0.9)" stroke="rgba(59,130,246,0.3)" strokeWidth="1" />
+          <polygon points="115,108 120,115 110,112" fill="rgba(255,255,255,0.9)" />
+          <text x="110" y="105" textAnchor="middle" fontSize="8" fill="rgba(59,130,246,0.8)">Ideas</text>
+        </motion.g>
+
+        <motion.g
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 1.4 }}
+        >
+          <ellipse cx="280" cy="90" rx="25" ry="15" fill="rgba(255,255,255,0.9)" stroke="rgba(168,85,247,0.3)" strokeWidth="1" />
+          <polygon points="270,102 265,110 275,108" fill="rgba(255,255,255,0.9)" />
+          <text x="280" y="95" textAnchor="middle" fontSize="8" fill="rgba(168,85,247,0.8)">Solutions</text>
+        </motion.g>
+
+        {/* Floating Icons */}
+        <motion.g
           animate={{
-            scale: [1, 1.05, 1],
+            y: [-3, 3, -3],
           }}
           transition={{
-            duration: 3,
+            duration: 4,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         >
-          <svg
-            className="w-16 h-16 text-slate-600 mx-auto mb-4"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M16 4C18.2091 4 20 5.79086 20 8C20 10.2091 18.2091 12 16 12C13.7909 12 12 10.2091 12 8C12 5.79086 13.7909 4 16 4ZM8 6C9.65685 6 11 7.34315 11 9C11 10.6569 9.65685 12 8 12C6.34315 12 5 10.6569 5 9C5 7.34315 6.34315 6 8 6ZM8 13C10.67 13 16 14.33 16 17V20H0V17C0 14.33 5.33 13 8 13ZM16 13.43C16.5 13.43 17.41 13.54 18.5 13.77C20.66 14.26 22 15.22 22 17V20H18V17C18 15.9 17.5 14.9 16.64 14.1C16.43 13.72 16.21 13.56 16 13.43Z"/>
-          </svg>
-        </motion.div>
-        <div className="text-slate-600 font-semibold">Our Expert Team</div>
-      </motion.div>
+          <circle cx="320" cy="80" r="6" fill="rgba(245,158,11,0.6)" />
+          <path d="M318,78 L322,78 M320,76 L320,80 M318,82 L322,82" stroke="white" strokeWidth="1" />
+        </motion.g>
 
-      {/* Connecting lines animation */}
-      <svg className="absolute inset-0 w-full h-full">
-        <motion.path
-          d="M 100 100 Q 200 50 300 100"
-          stroke="rgba(59, 130, 246, 0.3)"
-          strokeWidth="2"
-          fill="none"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 2, delay: 1 }}
-        />
-        <motion.path
-          d="M 300 300 Q 200 250 100 300"
-          stroke="rgba(168, 85, 247, 0.3)"
-          strokeWidth="2"
-          fill="none"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 2, delay: 1.5 }}
-        />
+        <motion.g
+          animate={{
+            y: [3, -3, 3],
+            rotate: [0, 5, -5, 0],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <rect x="85" y="75" width="12" height="12" rx="2" fill="rgba(239,68,68,0.6)" />
+          <circle cx="91" cy="81" r="2" fill="white" />
+        </motion.g>
       </svg>
     </div>
   );

@@ -46,26 +46,32 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <Link href="/contact">
-                <Button
-                  size="lg"
-                  className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 text-lg font-semibold"
+                <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Request a Consultation
-                </Button>
+                  <Button
+                    size="lg"
+                    className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 text-lg font-semibold"
+                  >
+                    Request a Consultation
+                  </Button>
+                </motion.div>
               </Link>
               
               <Link href="/services">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 text-lg font-semibold backdrop-blur-sm border-white/30"
+                <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Explore Services
-                </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 text-lg font-semibold backdrop-blur-sm border-white/30"
+                  >
+                    Explore Services
+                  </Button>
+                </motion.div>
               </Link>
             </motion.div>
           </motion.div>
