@@ -19,15 +19,12 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900" />
       <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/50 via-transparent to-amber-900/30" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-900/30 via-transparent to-transparent" />
-      
       {/* Enhanced Floating Shapes */}
       <FloatingShapes />
-      
       {/* Animated Grid Pattern */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
       </div>
-      
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -47,7 +44,7 @@ export default function HeroSection() {
               <span className="block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent drop-shadow-lg">
                 Transform Your
               </span>
-              <span className="block bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-500 bg-clip-text text-transparent drop-shadow-lg">
+              <span className="block bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-500 bg-clip-text text-transparent drop-shadow-lg text-[48px] font-extrabold pt-[12px] pb-[12px] mt-[-10px] mb-[-10px]">
                 Digital Future
               </span>
             </motion.h1>
@@ -148,7 +145,6 @@ export default function HeroSection() {
           </motion.div>
         </div>
       </div>
-
       {/* Scroll Indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
