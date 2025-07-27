@@ -47,7 +47,7 @@ export default function HeroSection() {
               <span className="block bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
                 Transform Your
               </span>
-              <span className="block bg-gradient-to-r from-amber-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-amber-300 via-yellow-300 to-orange-400 bg-clip-text text-transparent">
                 Digital Future
               </span>
             </motion.h1>
