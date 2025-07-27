@@ -113,7 +113,7 @@ export default function Footer() {
 
         <div className="border-t border-slate-800 mt-12 pt-8 text-center">
           <p className="text-slate-400">
-            &copy; 2024 Total Outsource Management. All rights reserved.
+            &copy; 2025 Total Outsource Management. All rights reserved.
           </p>
         </div>
       </div>
