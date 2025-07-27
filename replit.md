@@ -2,7 +2,7 @@
 
 ## Overview
 
-TotalOM is a modern full-stack web application built for an IT & BPO services company. The application showcases the company's services including web development, mobile apps, digital marketing, ITES & BPO, custom software, and data analytics. It features a professional marketing website with a contact form system for lead generation.
+TotalOM is a modern static marketing website built for an IT & BPO services company. The application showcases the company's services including web development, mobile apps, digital marketing, ITES & BPO, custom software, and data analytics. It features a professional static website with integrated contact forms using external services for lead generation.
 
 ## User Preferences
 
@@ -10,7 +10,7 @@ Preferred communication style: Simple, everyday language.
 
 ## System Architecture
 
-The application follows a modern full-stack architecture with a clear separation between frontend and backend concerns:
+The application follows a modern static website architecture optimized for performance and easy deployment:
 
 ### Frontend Architecture
 - **Framework**: React 18 with TypeScript for type safety
@@ -20,12 +20,12 @@ The application follows a modern full-stack architecture with a clear separation
 - **State Management**: TanStack Query (React Query) for server state management
 - **Form Handling**: React Hook Form with Zod validation
 
-### Backend Architecture
-- **Runtime**: Node.js with Express.js framework
-- **Language**: TypeScript for full-stack type safety
-- **API Design**: RESTful API endpoints
-- **Database**: Drizzle ORM with PostgreSQL (using Neon Database)
-- **Session Management**: In-memory storage with plans for PostgreSQL sessions
+### Static Backend (Development Only)
+- **Runtime**: Node.js with Express.js framework (development server)
+- **Language**: TypeScript for type safety
+- **API Design**: Minimal health check endpoints
+- **Static Generation**: All content statically generated
+- **Contact Forms**: External service integration (mailto, form handlers)
 
 ## Key Components
 
@@ -42,26 +42,29 @@ The application follows a modern full-stack architecture with a clear separation
 - **Schema Validation**: Zod schemas for runtime type checking
 - **Error Handling**: Centralized error handling middleware
 
-### Database Schema
-- **Users Table**: Basic user authentication structure (id, username, password)
-- **Contacts Table**: Lead capture system (id, firstName, lastName, email, company, message, createdAt)
+### Static Content Structure
+- **Service Information**: Statically defined service categories and descriptions
+- **Company Data**: Contact information, team details, and company overview
+- **Portfolio Items**: Project showcases and case studies
+- **Contact Forms**: Client-side validation with external form handling
 
 ## Data Flow
 
-1. **Contact Form Submission**:
+1. **Static Content Delivery**:
+   - All website content served as static files
+   - Service information, company details, and portfolio items pre-built
+   - Industry-specific content and tech stack information embedded in components
+
+2. **Contact Form Handling**:
    - User fills out contact form on frontend
-   - Form data validated using Zod schemas
-   - Data sent to `/api/contact` endpoint
-   - Backend validates and stores contact in database
-   - Success/error feedback displayed to user
+   - Form data validated using Zod schemas client-side
+   - Form submission opens default email client with pre-filled information
+   - Alternative: Integration with external form services (Formspree, Netlify Forms)
 
-2. **Contact Management**:
-   - Admin can retrieve all contacts via `/api/contacts` endpoint
-   - Contact data sorted by creation date
-
-3. **Static Content**:
-   - Service information, company details, and portfolio items are statically defined
-   - Industry-specific content and tech stack information stored in component data
+3. **External Integrations**:
+   - WhatsApp chat widget for instant messaging
+   - Mailto links for direct email contact
+   - Phone links for direct calling
 
 ## External Dependencies
 
@@ -71,10 +74,10 @@ The application follows a modern full-stack architecture with a clear separation
 - **Animations**: Framer Motion, Embla Carousel
 - **Utilities**: date-fns, clsx, cmdk
 
-### Backend Dependencies
-- **Database**: Drizzle ORM, @neondatabase/serverless
-- **Validation**: Zod, drizzle-zod
-- **Session**: connect-pg-simple (prepared for PostgreSQL sessions)
+### Static Dependencies
+- **Validation**: Zod for client-side form validation
+- **Utilities**: date-fns, clsx for content formatting
+- **Development**: Express.js for development server only
 
 ### Development Dependencies
 - **Build Tools**: Vite for frontend bundling, esbuild for backend
@@ -93,24 +96,27 @@ The application follows a modern full-stack architecture with a clear separation
 3. Static files served by Express in production
 4. Database migrations managed through Drizzle Kit
 
-### Database Management
-- Drizzle migrations stored in `./migrations` directory
-- Schema defined in `shared/schema.ts` for type sharing
-- Database pushes handled via `npm run db:push`
+### Static Site Generation
+- Frontend built using Vite to `dist/public` directory
+- No database migrations required for static content
+- Schema defined in `shared/schema.ts` for form validation only
 
 ### Environment Configuration
-- Database connection via `DATABASE_URL` environment variable
-- Neon Database (PostgreSQL) for production data persistence
-- Environment-specific configurations for development vs production
+- No database connection required for production
+- Static files can be deployed to any CDN or static hosting platform
+- Environment-specific configurations for development server vs static deployment
 
-The application is designed to be easily deployable on platforms like Replit, with proper environment variable management and build processes for both development and production environments.
+The application is designed to be easily deployable as a static website on platforms like Replit, Netlify, Vercel, or any static hosting provider, with no database dependencies and minimal configuration requirements.
 
 ## Recent Updates (January 2025)
 
-- Enhanced AI-focused hero section illustration with neural networks, orbiting tech nodes, and animated data flows
-- Updated navigation branding with purple T-O-M color scheme for "Total Outsource Management"
-- Added TotalOM logo as favicon with proper SEO meta tags
-- Updated footer copyright to 2025
-- Created comprehensive DEPLOYMENT.md guide covering multiple hosting platforms
-- Fixed React DOM nesting warnings in navigation components
-- Integrated WhatsApp chat functionality with +91 9884411456 contact number
+- **Static Website Conversion**: Removed all database dependencies and converted to static architecture
+- **Contact Form Redesign**: Implemented mailto-based contact forms with external service integration options
+- **Enhanced AI-focused hero section illustration** with neural networks, orbiting tech nodes, and animated data flows
+- **Updated navigation branding** with purple T-O-M color scheme for "Total Outsource Management"
+- **Added TotalOM logo as favicon** with proper SEO meta tags
+- **Updated footer copyright to 2025**
+- **Created comprehensive DEPLOYMENT.md guide** covering multiple hosting platforms
+- **Fixed React DOM nesting warnings** in navigation components
+- **Integrated WhatsApp chat functionality** with +91 9884411456 contact number
+- **Simplified architecture** for easier deployment and maintenance

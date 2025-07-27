@@ -6,8 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
+// Static form - no API calls needed
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -19,37 +18,37 @@ export default function ContactSection() {
   });
 
   const { toast } = useToast();
-  const queryClient = useQueryClient();
-
-  const contactMutation = useMutation({
-    mutationFn: (data: typeof formData) =>
-      apiRequest("POST", "/api/contact", data),
-    onSuccess: () => {
-      toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you within 24 hours.",
-      });
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        company: "",
-        message: "",
-      });
-      queryClient.invalidateQueries({ queryKey: ["/api/contacts"] });
-    },
-    onError: () => {
-      toast({
-        title: "Failed to send message",
-        description: "Please try again later.",
-        variant: "destructive",
-      });
-    },
-  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    contactMutation.mutate(formData);
+    
+    // Static website approach - redirect to email or external form service
+    const subject = encodeURIComponent(`Contact from ${formData.firstName} ${formData.lastName}`);
+    const body = encodeURIComponent(
+      `First Name: ${formData.firstName}\n` +
+      `Last Name: ${formData.lastName}\n` +
+      `Email: ${formData.email}\n` +
+      `Company: ${formData.company || 'Not specified'}\n\n` +
+      `Message:\n${formData.message}`
+    );
+    
+    // Open default email client
+    window.location.href = `mailto:totalom.ind@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Show success message
+    toast({
+      title: "Email client opened!",
+      description: "Please send the email from your email application.",
+    });
+    
+    // Reset form
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      company: "",
+      message: "",
+    });
   };
 
   const handleInputChange = (
@@ -207,10 +206,17 @@ export default function ContactSection() {
               <Button
                 type="submit"
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold"
-                disabled={contactMutation.isPending}
               >
-                {contactMutation.isPending ? "Sending..." : "Send Message"}
+                Send Message
               </Button>
+              
+              <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <p className="text-sm text-blue-700">
+                  <strong>Alternative contact methods:</strong><br />
+                  📧 Email directly: <a href="mailto:totalom.ind@gmail.com" className="underline">totalom.ind@gmail.com</a><br />
+                  📱 Call/WhatsApp: <a href="tel:+919884411456" className="underline">+91 9884411456</a>
+                </p>
+              </div>
             </form>
           </motion.div>
         </div>
